@@ -28,6 +28,13 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            preview {
+              src: childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
           }
           rawMarkdownBody
         }

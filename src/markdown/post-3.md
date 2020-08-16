@@ -1,7 +1,7 @@
 ---
-slug: "/markdown/post-2.md"
+slug: "/markdown/post-3.md"
 date: "2019-05-04"
-title: "Second test post"
+title: "Third test post"
 preview: "../images/post-image.png"
 ---
 
