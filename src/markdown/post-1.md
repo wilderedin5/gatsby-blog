@@ -1,5 +1,5 @@
 ---
-slug: "/markdown/post-1.md"
+slug: /markdown/post-1.md
 date: "2019-05-04"
 title: "First test post"
 preview: "../images/post-image.png"
