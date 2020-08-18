@@ -12,6 +12,8 @@ const InnerContainer = styled(Container)`
 
 const Post = styled(BasePost)`
   width: 100%;
+  border: none;
+  padding: 0;
 `
 
 const PostTemplate = ({ data }) => (

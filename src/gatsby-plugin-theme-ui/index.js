@@ -28,6 +28,7 @@ export default {
   layout: {
     container: {
       width: `1240px`,
+      padding: `0 2rem`,
     },
   },
 }
