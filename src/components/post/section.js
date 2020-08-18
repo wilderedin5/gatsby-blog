@@ -20,6 +20,7 @@ const Section = ({ posts, className }) => (
         title={post.frontmatter.title}
         content={post.rawMarkdownBody}
         img={post.frontmatter.preview.src.fluid}
+        slug={post.frontmatter.slug}
       />
     ))}
   </Container>

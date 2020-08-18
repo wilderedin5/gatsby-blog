@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import BaseImg from "gatsby-image"
+import { Link } from "gatsby"
 
 const Container = styled.div`
   width: calc(50% - 1rem);
@@ -16,11 +17,16 @@ const Img = styled(BaseImg)`
   height: 18.75rem;
 `
 
-const Post = ({ title, content, img, className }) => (
+const Post = ({ title, content, img, slug, className }) => (
   <Container className={className}>
     <Img fluid={img} />
     <Title>{title}</Title>
     <Content>{content}</Content>
+    {slug ? (
+      <Link to={slug}>Go to post page</Link>
+    ) : (
+      <Link to="/">Return to the homepage</Link>
+    )}
   </Container>
 )
 
