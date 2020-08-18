@@ -31,4 +31,13 @@ export default {
       padding: `0 2rem`,
     },
   },
+  links: {
+    nav: {
+      color: "white",
+      textDecoration: "none",
+      ":hover": {
+        textDecoration: "underline",
+      },
+    },
+  },
 }

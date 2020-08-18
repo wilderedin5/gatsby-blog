@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import BaseImg from "gatsby-image"
 import { Link } from "gatsby"

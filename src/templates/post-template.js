@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { Container } from "theme-ui"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"

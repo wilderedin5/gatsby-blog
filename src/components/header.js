@@ -1,6 +1,8 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Container } from "theme-ui"
+import Link from "./shared/link"
 
 const OuterContainer = styled.div`
   background: ${p => p.theme.colors.primary};
@@ -12,9 +14,19 @@ const InnerContainer = styled(Container)`
   text-align: center;
 `
 
+const Navbar = styled.nav`
+  display: flex;
+`
+
 const Header = () => (
   <OuterContainer>
-    <InnerContainer>Здесь будет меню</InnerContainer>
+    <InnerContainer>
+      <Navbar>
+        <Link variant="nav" to="/">
+          Home
+        </Link>
+      </Navbar>
+    </InnerContainer>
   </OuterContainer>
 )
 
