@@ -26,7 +26,7 @@ const Post = ({ title, content, img, slug, className }) => (
     {slug ? (
       <Link to={slug}>Go to post page</Link>
     ) : (
-      <Link to="/">Return to the homepage</Link>
+      <Link to="/blog">Return to the blog</Link>
     )}
   </Container>
 )

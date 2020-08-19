@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Container } from "theme-ui"
-import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import MetaData from "../components/page-metadata"
-import Section from "../components/post/section"
 import Layout from "../components/layout"
 
 const InnerContainer = styled(Container)`
@@ -14,33 +12,8 @@ const InnerContainer = styled(Container)`
 const IndexPage = ({ data }) => (
   <Layout>
     <MetaData title="Home page" />
-    <InnerContainer>
-      <Section posts={data.posts.edges} />
-    </InnerContainer>
+    <InnerContainer>Home page</InnerContainer>
   </Layout>
 )
 
 export default IndexPage
-
-export const query = graphql`
-  query AllPosts {
-    posts: allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            slug
-            title
-            preview {
-              src: childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
-          }
-          rawMarkdownBody
-        }
-      }
-    }
-  }
-`

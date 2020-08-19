@@ -25,6 +25,9 @@ const Header = () => (
         <Link variant="nav" to="/">
           Home
         </Link>
+        <Link variant="nav" to="/blog">
+          Blog
+        </Link>
       </Navbar>
     </InnerContainer>
   </OuterContainer>
