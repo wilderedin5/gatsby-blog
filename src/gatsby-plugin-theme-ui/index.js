@@ -39,5 +39,13 @@ export default {
         textDecoration: "underline",
       },
     },
+
+    primary: {
+      color: "black",
+      textDecoration: "underline",
+      ":hover": {
+        textDecoration: "none",
+      },
+    },
   },
 }

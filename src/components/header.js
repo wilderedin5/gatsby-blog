@@ -16,6 +16,9 @@ const InnerContainer = styled(Container)`
 
 const Navbar = styled.nav`
   display: flex;
+  a:not(:last-child) {
+    margin-right: ${p => p.theme.space[3]};
+  }
 `
 
 const Header = () => (
