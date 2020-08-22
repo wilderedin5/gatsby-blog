@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Container } from "theme-ui"
+import GlobalStyle from "../style/globalStyle"
 import Link from "./shared/link"
 
 const OuterContainer = styled.div`
@@ -23,6 +24,7 @@ const Navbar = styled.nav`
 
 const Header = () => (
   <OuterContainer>
+    <GlobalStyle />
     <InnerContainer>
       <Navbar>
         <Link variant="nav" to="/">
