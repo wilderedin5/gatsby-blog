@@ -9,7 +9,7 @@ const InnerContainer = styled(Container)`
   margin: ${p => p.theme.space[5]} auto;
 `
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout>
     <MetaData title="Home page" />
     <InnerContainer>Home page</InnerContainer>

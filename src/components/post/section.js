@@ -16,7 +16,7 @@ const Post = styled(BasePost)`
 
 const Section = ({ posts, className }) => (
   <Container className={className}>
-    {posts.map(({ node: post }) => (
+    {posts.map(post => (
       <Post
         title={post.frontmatter.title}
         content={post.rawMarkdownBody}

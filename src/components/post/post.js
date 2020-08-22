@@ -5,7 +5,7 @@ import BaseImg from "gatsby-image"
 import Link from "../shared/link"
 
 const Container = styled.div`
-  width: calc(50% - 1rem);
+  width: calc(50% - 2rem);
   padding: ${p => p.theme.space[2]};
   border: 1px solid ${p => p.theme.colors.primary};
 `

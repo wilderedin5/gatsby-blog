@@ -15,7 +15,7 @@ const BlogPage = ({ data }) => (
   <Layout>
     <MetaData title="Blog page" />
     <InnerContainer>
-      <Section posts={data.posts.edges} />
+      <Section posts={data.posts.nodes} />
     </InnerContainer>
   </Layout>
 )
@@ -25,21 +25,19 @@ export default BlogPage
 export const query = graphql`
   query AllPosts {
     posts: allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            slug
-            title
-            preview {
-              src: childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
+      nodes {
+        frontmatter {
+          slug
+          title
+          preview {
+            src: childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }
-          rawMarkdownBody
         }
+        rawMarkdownBody
       }
     }
   }

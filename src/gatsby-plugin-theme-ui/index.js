@@ -1,51 +1,60 @@
-export default {
-  colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#639",
-    secondary: "yellow",
-    white: "#fff",
-  },
-  fonts: {
-    body: "system-ui, sans-serif",
-    heading: "system-ui, sans-serif",
-    monospace: "Menlo, monospace",
-  },
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
-  fontSizes: [0.75, 0.875, 1, 1.25, 1.5, 2, 3, 4, 4.5].map(
-    size => size + "rem"
-  ),
-  space: [0, 0.25, 0.5, 1, 2, 3, 8, 16, 32].map(space => space + "rem"),
-  sizes: [1240],
-  layout: {
-    container: {
-      width: `1240px`,
-      padding: `0 2rem`,
-    },
-  },
-  links: {
-    nav: {
-      color: "white",
-      textDecoration: "none",
-      ":hover": {
-        textDecoration: "underline",
-      },
-    },
+const space = [0, 0.25, 0.5, 1, 2, 3, 8, 16, 32].map(n => n + "rem")
 
-    primary: {
-      color: "black",
+const fontSizes = [0.75, 0.875, 1, 1.25, 1.5, 2, 3, 4, 4.5].map(n => n + "rem")
+
+const sizes = {
+  lg: "1240px",
+}
+
+const baseColors = {
+  text: "#000",
+  background: "#fff",
+  primary: "#639",
+  secondary: "yellow",
+  white: "#fff",
+}
+
+const colors = {
+  ...baseColors,
+}
+
+const styles = {}
+
+const layout = {
+  container: {
+    maxWidth: sizes.lg,
+    padding: `0 ${space[4]}`,
+  },
+}
+
+const links = {
+  nav: {
+    color: "white",
+    textDecoration: "none",
+    ":hover": {
       textDecoration: "underline",
-      ":hover": {
-        textDecoration: "none",
-      },
+    },
+  },
+
+  primary: {
+    color: "black",
+    textDecoration: "underline",
+    ":hover": {
+      textDecoration: "none",
     },
   },
 }
+
+export { space, fontSizes, colors, sizes, styles, layout, links }
+
+export const theme = {
+  space,
+  fontSizes,
+  colors,
+  sizes,
+  styles,
+  layout,
+  links,
+}
+
+export default theme
