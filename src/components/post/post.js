@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import styled from "@emotion/styled"
 import BaseImg from "gatsby-image"
 import Link from "../shared/link"
@@ -7,27 +7,45 @@ import Link from "../shared/link"
 const Container = styled.div`
   width: calc(50% - 2rem);
   padding: ${p => p.theme.space[2]};
-  border: 1px solid ${p => p.theme.colors.primary};
+  border: 2px solid ${p => p.theme.colors.primary};
 `
 
-const Title = styled.h2``
+const Title = styled(Styled.h3)``
 
-const Content = styled.p``
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`
+
+const Content = styled.p`
+  margin: 0;
+`
+
+const Info = styled.div`
+  padding: ${p => p.theme.space[2]};
+`
 
 const Img = styled(BaseImg)`
   height: 18.75rem;
+  border: 2px solid
+    ${p => (p.isOpened ? p.theme.colors.primary : "transparent")};
 `
 
 const Post = ({ title, content, img, slug, className }) => (
   <Container className={className}>
-    <Img fluid={img} />
-    <Title>{title}</Title>
-    <Content>{content}</Content>
-    {slug && (
-      <Link variant="primary" to={slug}>
-        Go to post page
-      </Link>
-    )}
+    <Img isOpened={slug} fluid={img} />
+    <Info>
+      <Header>
+        <Title>{title}</Title>
+        {slug && (
+          <Link variant="fill" to={slug}>
+            Go to post page
+          </Link>
+        )}
+      </Header>
+      <Content>{content}</Content>
+    </Info>
   </Container>
 )
 

@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Container } from "theme-ui"
-import { Link } from "gatsby"
+import Link from "./shared/link"
 
 const OuterContainer = styled.div`
   background: ${p => p.theme.colors.secondary};
@@ -17,7 +17,7 @@ const InnerContainer = styled(Container)`
 const Footer = () => (
   <OuterContainer>
     <InnerContainer>
-      <Link href="https://github.com/wilderedin5">
+      <Link variant="fill" href="https://github.com/wilderedin5">
         Open developer github page
       </Link>
     </InnerContainer>

@@ -18,7 +18,18 @@ const colors = {
   ...baseColors,
 }
 
-const styles = {}
+const styles = {
+  h1: {
+    fontSize: 8,
+    mt: 4,
+    mb: 3,
+  },
+  h3: {
+    fontSize: 5,
+    mt: 0,
+    mb: 3,
+  },
+}
 
 const layout = {
   container: {
@@ -36,11 +47,16 @@ const links = {
     },
   },
 
-  primary: {
-    color: "black",
+  fill: {
+    color: baseColors.text,
     textDecoration: "underline",
+    padding: 1,
     ":hover": {
       textDecoration: "none",
+      padding: "0.1875rem",
+      color: baseColors.white,
+      background: baseColors.primary,
+      border: "1px dashed white",
     },
   },
 }
