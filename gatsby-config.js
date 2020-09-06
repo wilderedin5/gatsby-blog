@@ -19,8 +19,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown`,
-        path: `${__dirname}/src/markdown`,
+        name: `blog`,
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
       },
     },
     `gatsby-plugin-emotion`,

@@ -23,7 +23,7 @@ const PostTemplate = ({ data }) => (
     <InnerContainer>
       <Post
         title={data.page.frontmatter.title}
-        content={data.page.rawMarkdownBody}
+        content={data.page.body}
         img={data.page.frontmatter.preview.src.fluid}
       />
     </InnerContainer>
@@ -33,8 +33,8 @@ const PostTemplate = ({ data }) => (
 export default PostTemplate
 
 export const query = graphql`
-  query Post($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
+  query Post($slug: String!) {
+    page: mdx(slug: { eq: $slug }) {
       frontmatter {
         title
         preview {
@@ -45,7 +45,7 @@ export const query = graphql`
           }
         }
       }
-      rawMarkdownBody
+      body
     }
   }
 `

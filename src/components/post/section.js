@@ -19,9 +19,9 @@ const Section = ({ posts, className }) => (
     {posts.map(post => (
       <Post
         title={post.frontmatter.title}
-        content={post.rawMarkdownBody}
+        content={post.body}
         img={post.frontmatter.preview.src.fluid}
-        slug={post.frontmatter.slug}
+        slug={post.slug}
       />
     ))}
   </Container>

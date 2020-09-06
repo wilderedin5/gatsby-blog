@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { MDXRenderer as Content } from "gatsby-plugin-mdx"
 import { jsx, Styled } from "theme-ui"
 import styled from "@emotion/styled"
 import BaseImg from "gatsby-image"
@@ -16,10 +17,6 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-`
-
-const Content = styled.p`
-  margin: 0;
 `
 
 const Info = styled.div`

@@ -24,10 +24,9 @@ export default BlogPage
 
 export const query = graphql`
   query AllPosts {
-    posts: allMarkdownRemark {
+    posts: allMdx {
       nodes {
         frontmatter {
-          slug
           title
           preview {
             src: childImageSharp {
@@ -37,7 +36,8 @@ export const query = graphql`
             }
           }
         }
-        rawMarkdownBody
+        body
+        slug
       }
     }
   }

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link as GatsbyLink } from "gatsby"
-import { Link as ThemeLink, useThemeUI } from "theme-ui"
+import { Link as ThemeLink } from "theme-ui"
 
 const Link = ({
   children,
@@ -12,7 +12,6 @@ const Link = ({
   ...rest
 }) => {
   const internal = /^\/(?!\/)/.test(to)
-  const { theme } = useThemeUI()
   return internal ? (
     <GatsbyLink
       to={to}
