@@ -1,36 +1,34 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Container } from "theme-ui"
-import { graphql } from "gatsby"
-import styled from "@emotion/styled"
-import MetaData from "../components/page-metadata"
-import BasePost from "../components/post/post"
-import Layout from "../components/layout"
-
-const InnerContainer = styled(Container)`
-  margin: ${p => p.theme.space[5]} auto;
-`
+import { jsx } from "theme-ui";
+import { Container } from "theme-ui";
+import { graphql } from "gatsby";
+import styled from "@emotion/styled";
+import MetaData from "../components/page-metadata";
+import { Post as BasePost } from "../components/post/post";
+import { Layout } from "../components/layout";
 
 const Post = styled(BasePost)`
-  width: 100%;
   border: none;
   padding: 0;
-`
+`;
 
-const PostTemplate = ({ data }) => (
-  <Layout>
-    <MetaData title="Post page" />
-    <InnerContainer>
-      <Post
-        title={data.page.frontmatter.title}
-        content={data.page.body}
-        img={data.page.frontmatter.preview.src.fluid}
-      />
-    </InnerContainer>
-  </Layout>
-)
+const PostTemplate = ({ data }) => {
+  const { frontmatter, body } = data.page;
+  return (
+    <Layout>
+      <MetaData title="Post page" />
+      <Container>
+        <Post
+          title={frontmatter.title}
+          content={body}
+          img={frontmatter.preview.src.fluid}
+        />
+      </Container>
+    </Layout>
+  );
+};
 
-export default PostTemplate
+export default PostTemplate;
 
 export const query = graphql`
   query Post($slug: String!) {
@@ -48,4 +46,4 @@ export const query = graphql`
       body
     }
   }
-`
+`;

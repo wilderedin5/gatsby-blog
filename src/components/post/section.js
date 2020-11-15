@@ -1,30 +1,24 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import styled from "@emotion/styled"
-import BasePost from "./post"
+import { jsx } from "theme-ui";
+import styled from "@emotion/styled";
+import { Post } from "./post";
 
 const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: ${p => p.theme.space[3]};
-`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+`;
 
-const Post = styled(BasePost)`
-  margin-bottom: ${p => p.theme.space[2]};
-`
-
-const Section = ({ posts, className }) => (
+export const Section = ({ posts, className }) => (
   <Container className={className}>
-    {posts.map(post => (
+    {posts.map(({ slug, frontmatter, body }) => (
       <Post
-        title={post.frontmatter.title}
-        content={post.body}
-        img={post.frontmatter.preview.src.fluid}
-        slug={post.slug}
+        key={slug}
+        title={frontmatter.title}
+        content={body}
+        img={frontmatter.preview.src.fluid}
+        slug={slug}
       />
     ))}
   </Container>
-)
-
-export default Section
+);

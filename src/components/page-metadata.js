@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import { jsx } from "theme-ui";
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
+import { useStaticQuery, graphql } from "gatsby";
 
 const MetaData = ({ title, description, image, article }) => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   const useSiteMetadata = () => {
     const { site } = useStaticQuery(
@@ -22,9 +22,9 @@ const MetaData = ({ title, description, image, article }) => {
           }
         }
       `
-    )
-    return site.siteMetadata
-  }
+    );
+    return site.siteMetadata;
+  };
 
   const {
     defaultTitle,
@@ -32,14 +32,14 @@ const MetaData = ({ title, description, image, article }) => {
     siteUrl,
     defaultImage,
     twitterUsername,
-  } = useSiteMetadata()
+  } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
-  }
+  };
 
   return (
     <Helmet title={seo.title}>
@@ -72,7 +72,7 @@ const MetaData = ({ title, description, image, article }) => {
 
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
-  )
-}
+  );
+};
 
-export default MetaData
+export default MetaData;

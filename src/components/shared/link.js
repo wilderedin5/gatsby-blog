@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link as GatsbyLink } from "gatsby"
-import { Link as ThemeLink } from "theme-ui"
+import { jsx } from "theme-ui";
+import { Link as GatsbyLink } from "gatsby";
+import { Link as ThemeLink } from "theme-ui";
 
-const Link = ({
+export const Link = ({
   children,
   to,
   activeClassName,
   partiallyActive,
-  variant,
+  variant = "fill",
   ...rest
 }) => {
-  const internal = /^\/(?!\/)/.test(to)
+  const internal = /^\/(?!\/)/.test(to);
   return internal ? (
     <GatsbyLink
       to={to}
@@ -28,7 +28,5 @@ const Link = ({
     <ThemeLink href={to} variant={variant} {...rest}>
       {children}
     </ThemeLink>
-  )
-}
-
-export default Link
+  );
+};

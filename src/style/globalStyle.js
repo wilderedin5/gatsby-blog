@@ -1,9 +1,9 @@
-import React from "react"
-import { Global } from "@emotion/core"
+import React from "react";
+import { Global } from "@emotion/core";
 
-const GlobalStyle = props => (
+export const GlobalStyle = (props) => (
   <Global
-    styles={theme => ({
+    styles={(theme) => ({
       "*": {
         boxSizing: "border-box",
       },
@@ -12,6 +12,4 @@ const GlobalStyle = props => (
       },
     })}
   />
-)
-
-export default GlobalStyle
+);

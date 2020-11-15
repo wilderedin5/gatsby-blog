@@ -1,26 +1,21 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Container } from "theme-ui"
-import { graphql } from "gatsby"
-import styled from "@emotion/styled"
-import MetaData from "../components/page-metadata"
-import Section from "../components/post/section"
-import Layout from "../components/layout"
-
-const InnerContainer = styled(Container)`
-  margin: ${p => p.theme.space[5]} auto;
-`
+import { jsx } from "theme-ui";
+import { Container } from "theme-ui";
+import { graphql } from "gatsby";
+import MetaData from "../components/page-metadata";
+import { Section } from "../components/post/section";
+import { Layout } from "../components/layout";
 
 const BlogPage = ({ data }) => (
   <Layout>
     <MetaData title="Blog page" />
-    <InnerContainer>
+    <Container>
       <Section posts={data.posts.nodes} />
-    </InnerContainer>
+    </Container>
   </Layout>
-)
+);
 
-export default BlogPage
+export default BlogPage;
 
 export const query = graphql`
   query AllPosts {
@@ -41,4 +36,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
