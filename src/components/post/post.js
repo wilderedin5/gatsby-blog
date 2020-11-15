@@ -3,7 +3,7 @@ import { MDXRenderer as Content } from "gatsby-plugin-mdx";
 import { jsx, Styled } from "theme-ui";
 import styled from "@emotion/styled";
 import BaseImg from "gatsby-image";
-import { Link } from "../shared/link";
+import { Link as BaseLink } from "gatsby";
 
 const Container = styled.div`
   padding: ${(p) => p.theme.space[3]};
@@ -28,15 +28,40 @@ const Img = styled(BaseImg)`
   height: 18.75rem;
 `;
 
+const Link = styled(BaseLink)`
+  color: ${(p) => p.theme.colors.text};
+  text-decoration: none;
+  position: relative;
+
+  :hover {
+    :before {
+      content: "Go to post page";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      color: ${(p) => p.theme.colors.white};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+  }
+`;
+
 export const Post = ({ title, content, img, slug, className }) => (
-  <Container className={className}>
-    <Img fluid={img} />
-    <Info>
-      <Header>
-        <Title>{title}</Title>
-        <Link to={slug}>Go to post page</Link>
-      </Header>
-      <Content>{content}</Content>
-    </Info>
-  </Container>
+  <Link to={slug}>
+    <Container className={className}>
+      <Img fluid={img} />
+      <Info>
+        <Header>
+          <Title>{title}</Title>
+        </Header>
+        <Content>{content}</Content>
+      </Info>
+    </Container>
+  </Link>
 );
