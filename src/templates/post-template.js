@@ -33,17 +33,7 @@ export default PostTemplate;
 export const query = graphql`
   query Post($slug: String!) {
     page: mdx(slug: { eq: $slug }) {
-      frontmatter {
-        title
-        preview {
-          src: childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
-      }
-      body
+      ...PostFragment
     }
   }
 `;

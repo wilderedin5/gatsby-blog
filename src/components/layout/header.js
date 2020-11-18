@@ -9,14 +9,14 @@ const OuterContainer = styled.div`
   background: ${(p) => p.theme.colors.primary};
 `;
 
-const InnerContainer = styled(Container)`
+const Nav = styled(Container)`
   display: flex;
   padding: ${(p) => p.theme.space[4]};
   color: ${(p) => p.theme.colors.white};
   text-align: center;
 `;
 
-const Link = styled(BaseLink)`
+const NavItem = styled(BaseLink)`
   & + & {
     margin-left: ${(p) => p.theme.space[3]};
   }
@@ -25,13 +25,13 @@ const Link = styled(BaseLink)`
 export const Header = () => (
   <OuterContainer>
     <GlobalStyle />
-    <InnerContainer>
-      <Link variant="nav" to="/">
+    <Nav>
+      <NavItem variant="nav" to="/">
         Home
-      </Link>
-      <Link variant="nav" to="/blog">
+      </NavItem>
+      <NavItem variant="nav" to="/blog">
         Blog
-      </Link>
-    </InnerContainer>
+      </NavItem>
+    </Nav>
   </OuterContainer>
 );

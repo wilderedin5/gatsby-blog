@@ -21,17 +21,7 @@ export const query = graphql`
   query AllPosts {
     posts: allMdx {
       nodes {
-        frontmatter {
-          title
-          preview {
-            src: childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
-        body
+        ...PostFragment
         slug
       }
     }

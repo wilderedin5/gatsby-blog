@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { MDXRenderer as Content } from "gatsby-plugin-mdx";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import { jsx, Styled } from "theme-ui";
 import styled from "@emotion/styled";
 import BaseImg from "gatsby-image";
@@ -14,11 +14,7 @@ const Title = styled(Styled.h3)`
   margin: 0;
 `;
 
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-`;
+const Header = styled.div``;
 
 const Info = styled.div`
   text-align: justify;
@@ -60,7 +56,7 @@ export const Post = ({ title, content, img, slug, className }) => (
         <Header>
           <Title>{title}</Title>
         </Header>
-        <Content>{content}</Content>
+        <MDXRenderer>{content}</MDXRenderer>
       </Info>
     </Container>
   </Link>
