@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Container } from "theme-ui";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import MetaData from "../components/page-metadata";
 import { Post as BasePost } from "../components/post/post";
 import { Layout } from "../components/layout";
 
@@ -13,17 +11,14 @@ const Post = styled(BasePost)`
 `;
 
 const PostTemplate = ({ data }) => {
-  const { frontmatter, body } = data.page;
+  const {
+    frontmatter: { title, preview },
+    body,
+  } = data.page;
+
   return (
-    <Layout>
-      <MetaData title="Post page" />
-      <Container>
-        <Post
-          title={frontmatter.title}
-          content={body}
-          img={frontmatter.preview.src.fluid}
-        />
-      </Container>
+    <Layout title={title}>
+      <Post title={title} content={body} img={preview.src.fluid} />
     </Layout>
   );
 };

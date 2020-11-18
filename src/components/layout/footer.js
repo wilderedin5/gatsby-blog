@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Container } from "theme-ui";
 import styled from "@emotion/styled";
-import { Container } from "theme-ui";
 import { Link } from "../shared/link";
 
 const OuterContainer = styled.div`

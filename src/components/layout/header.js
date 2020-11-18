@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Container } from "theme-ui";
 import styled from "@emotion/styled";
-import { Container } from "theme-ui";
 import { GlobalStyle } from "../../style/globalStyle";
 import { Link as BaseLink } from "../shared/link";
 

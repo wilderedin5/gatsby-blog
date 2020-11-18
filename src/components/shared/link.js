@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Link as ThemeLink } from "theme-ui";
 import { Link as GatsbyLink } from "gatsby";
-import { Link as ThemeLink } from "theme-ui";
 
 export const Link = ({
   children,
