@@ -1,24 +1,28 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
+import { CardFlip } from "../shared/card-flip";
 import { Post } from "./post";
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-auto-rows: 600px;
+  grid-gap: 20px;
 `;
 
 export const Section = ({ posts, className }) => (
   <Container className={className}>
     {posts.map(({ slug, frontmatter, body }) => (
-      <Post
-        key={slug}
-        title={frontmatter.title}
-        content={body}
-        img={frontmatter.preview.src.fluid}
-        slug={slug}
-      />
+      <CardFlip key={slug}>
+        <Post
+          title={frontmatter.title}
+          content={body}
+          img={frontmatter.preview.src.fluid}
+          slug={slug}
+        />
+        <Post title={frontmatter.title} content={body} slug={slug} />
+      </CardFlip>
     ))}
   </Container>
 );

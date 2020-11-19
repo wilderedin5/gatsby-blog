@@ -27,31 +27,12 @@ const Img = styled(BaseImg)`
 const Link = styled(BaseLink)`
   color: ${(p) => p.theme.colors.text};
   text-decoration: none;
-  position: relative;
-
-  :hover {
-    :before {
-      content: "Go to post page";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-      color: ${(p) => p.theme.colors.white};
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-    }
-  }
 `;
 
 export const Post = ({ title, content, img, slug, className }) => (
   <Link to={slug}>
     <Container className={className}>
-      <Img fluid={img} />
+      {img && <Img fluid={img} />}
       <Info>
         <Header>
           <Title>{title}</Title>
