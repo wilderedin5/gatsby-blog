@@ -14,12 +14,6 @@ const Title = styled(Styled.h3)`
   margin: 0;
 `;
 
-const Header = styled.div``;
-
-const Info = styled.div`
-  text-align: justify;
-`;
-
 const Img = styled(BaseImg)`
   height: 18.75rem;
 `;
@@ -33,12 +27,8 @@ export const Post = ({ title, content, img, slug, className }) => (
   <Link to={slug}>
     <Container className={className}>
       {img && <Img fluid={img} />}
-      <Info>
-        <Header>
-          <Title>{title}</Title>
-        </Header>
-        <MDXRenderer>{content}</MDXRenderer>
-      </Info>
+      <Title>{title}</Title>
+      <MDXRenderer>{content}</MDXRenderer>
     </Container>
   </Link>
 );

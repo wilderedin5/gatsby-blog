@@ -26,11 +26,15 @@ const Front = styled(Card)`
 export const CardFlip = ({ children, className }) => {
   const [isFlipped, setFlipped] = useState(false);
 
+  const handleFlipChange = () => {
+    setFlipped(!isFlipped);
+  };
+
   return (
     <Container
       className={className}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
+      onMouseEnter={handleFlipChange}
+      onMouseLeave={handleFlipChange}
     >
       <Front isFlipped={isFlipped}>{children[0]}</Front>
       <Back isFlipped={isFlipped}>{children[1]}</Back>

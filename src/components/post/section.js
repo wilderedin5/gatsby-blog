@@ -6,7 +6,7 @@ import { Post } from "./post";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 600px;
   grid-gap: 20px;
 `;
