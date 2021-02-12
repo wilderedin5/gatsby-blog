@@ -3,14 +3,17 @@ import { jsx, Styled } from "theme-ui";
 import styled from "@emotion/styled";
 
 const Container = styled.div`
-  text-align: center;
+  border: ${(p) => `1px solid ${p.theme.colors.primary}`};
+  padding: ${(p) => p.theme.space[3]};
 `;
 
-const Title = styled(Styled.h1)``;
+const Title = styled(Styled.h3)``;
 
-export const Section = ({ title, children, className }) => (
+const Feature = ({ title, children, className }) => (
   <Container className={className}>
     <Title>{title}</Title>
     {children}
   </Container>
 );
+
+export default Feature;
