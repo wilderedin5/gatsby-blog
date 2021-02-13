@@ -6,10 +6,11 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1.75rem auto;
   grid-column-gap: ${(p) => p.theme.space[3]};
-  grid-row-gap: ${(p) => p.theme.space[3]};
+  grid-row-gap: ${(p) => p.theme.space[2]};
   align-items: center;
   border: ${(p) => `1px solid ${p.theme.colors.primary}`};
   padding: ${(p) => p.theme.space[3]};
+  box-shadow: ${(p) => `0 0 12px 0 ${p.theme.colors.primary}`};
 `;
 
 const Title = styled(Styled.h3)`
@@ -17,8 +18,8 @@ const Title = styled(Styled.h3)`
 `;
 
 const Icon = styled.svg`
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
 `;
 
 const Description = styled.p`

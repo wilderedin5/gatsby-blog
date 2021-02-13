@@ -35,8 +35,8 @@ const FEATURES = [
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: ${(p) => p.theme.space[3]};
-  grid-row-gap: ${(p) => p.theme.space[3]};
+  grid-column-gap: ${(p) => p.theme.space[4]};
+  grid-row-gap: ${(p) => p.theme.space[4]};
 `;
 
 const animationSettings = {

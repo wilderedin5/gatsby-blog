@@ -3,10 +3,10 @@ import { jsx, Container } from "theme-ui";
 import styled from "@emotion/styled";
 import { Layout } from "../components/layout";
 import { Section as BaseSection } from "../components/home/section";
-import { FeatureList } from "../components/home/feature-list";
+import { Features } from "../components/home/features";
 
 const Section = styled(BaseSection)`
-  margin-bottom: 40px;
+  margin-bottom: ${(p) => p.theme.space[5]};
 `;
 
 const IndexPage = () => (
@@ -21,7 +21,7 @@ const IndexPage = () => (
         but because those who do not know how to pursue pleasure rationally
         encounter consequences that are extremely painful.
       </Section>
-      <FeatureList />
+      <Features />
     </Container>
   </Layout>
 );
