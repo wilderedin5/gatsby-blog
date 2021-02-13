@@ -3,7 +3,7 @@ import { jsx, Container } from "theme-ui";
 import styled from "@emotion/styled";
 import { Layout } from "../components/layout";
 import { Section as BaseSection } from "../components/home/section";
-import FeatureList from "../components/home/feature-list";
+import { FeatureList } from "../components/home/feature-list";
 
 const Section = styled(BaseSection)`
   margin-bottom: 40px;

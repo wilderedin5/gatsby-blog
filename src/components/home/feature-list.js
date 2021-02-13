@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
-import Feature from "./feature";
+import { EmoIcon, GatsbyIcon, ReactIcon, TextIcon } from "../../assets/icons";
+import { Feature } from "./feature";
 
 const Container = styled.div`
   display: grid;
@@ -10,25 +11,23 @@ const Container = styled.div`
   grid-row-gap: ${(p) => p.theme.space[3]};
 `;
 
-const FeatureList = ({ className }) => (
+export const FeatureList = ({ className }) => (
   <Container className={className}>
-    <Feature title="React">
+    <Feature title="React" icon={ReactIcon}>
       But I must explain to you how all this mistaken idea of denouncing
       pleasure and praising pain
     </Feature>
-    <Feature title="Gatsby">
+    <Feature title="Gatsby" icon={GatsbyIcon}>
       But I must explain to you how all this mistaken idea of denouncing
       pleasure and praising pain
     </Feature>
-    <Feature title="Emotion">
+    <Feature title="Emotion" icon={EmoIcon}>
       But I must explain to you how all this mistaken idea of denouncing
       pleasure and praising pain
     </Feature>
-    <Feature title="Mdx">
+    <Feature title="Mdx" icon={TextIcon}>
       But I must explain to you how all this mistaken idea of denouncing
       pleasure and praising pain
     </Feature>
   </Container>
 );
-
-export default FeatureList;

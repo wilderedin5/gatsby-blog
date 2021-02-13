@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
     url: "https://github.com/wilderedin5",
-    image: "/images/gatsby-icon.png",
+    image: "/assets/images/general/gatsby-icon.png",
     twitterUsername: "@wilderedin5",
   },
   plugins: [
@@ -12,15 +12,25 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/src/blog`,
+        path: `${__dirname}/src/blog/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-svgr",
+      options: {
+        prettier: true,
+        svgo: true,
+        svgoConfig: {
+          plugins: [{ removeViewBox: false }, { cleanupIDs: true }],
+        },
       },
     },
     {
@@ -43,8 +53,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/assets/images/general/gatsby-icon.png`,
       },
     },
   ],
-}
+};
