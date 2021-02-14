@@ -23,12 +23,15 @@ const Link = styled(BaseLink)`
   text-decoration: none;
 `;
 
-export const Post = ({ title, content, img, slug, className }) => (
-  <Link to={slug}>
-    <Container className={className}>
-      {img && <Img fluid={img} />}
-      <Title>{title}</Title>
-      <MDXRenderer>{content}</MDXRenderer>
-    </Container>
-  </Link>
-);
+export const Post = ({ post, className }) => {
+  const { frontmatter, body, slug } = post;
+  return (
+    <Link to={slug}>
+      <Container className={className}>
+        <Img fluid={frontmatter.preview.src.fluid} />
+        <Title>{frontmatter.title}</Title>
+        <MDXRenderer>{body}</MDXRenderer>
+      </Container>
+    </Link>
+  );
+};
