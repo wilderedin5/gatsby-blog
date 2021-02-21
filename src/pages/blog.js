@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx, Container } from "theme-ui";
 import { graphql } from "gatsby";
-import { Section } from "../components/post/section";
+import { Posts } from "../components/blog/posts";
 import { Layout } from "../components/layout";
 
 const BlogPage = ({ data }) => (
   <Layout metaTitle="Blog page">
     <Container>
-      <Section posts={data.posts.nodes} />
+      <Posts posts={data.posts.nodes} />
     </Container>
   </Layout>
 );

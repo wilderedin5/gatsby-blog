@@ -33,6 +33,7 @@ export const query = graphql`
   query Post($slug: String!) {
     page: mdx(slug: { eq: $slug }) {
       ...PostFragment
+      body
     }
   }
 `;

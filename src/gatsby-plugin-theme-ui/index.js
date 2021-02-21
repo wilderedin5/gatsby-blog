@@ -10,6 +10,7 @@ const sizes = {
 
 const baseColors = {
   text: "#000",
+  black: "#000",
   background: "#fff",
   primary: "#639",
   secondary: "yellow",
