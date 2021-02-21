@@ -2,13 +2,14 @@
 import { jsx, Container } from "theme-ui";
 import styled from "@emotion/styled";
 import { GlobalStyle } from "../../style/globalStyle";
+import MetaData from "../page-metadata";
 import { Link as BaseLink } from "../shared/link";
 
 const OuterContainer = styled.div`
   background: ${(p) => p.theme.colors.primary};
 `;
 
-const Nav = styled(Container)`
+const NavContainer = styled(Container)`
   display: flex;
   padding: ${(p) => p.theme.space[4]};
   color: ${(p) => p.theme.colors.white};
@@ -21,16 +22,21 @@ const NavItem = styled(BaseLink)`
   }
 `;
 
-export const Header = () => (
-  <OuterContainer>
+const Navbar = ({ className }) => (
+  <NavContainer className={className}>
+    <NavItem variant="nav" to="/">
+      Home
+    </NavItem>
+    <NavItem variant="nav" to="/blog">
+      Blog
+    </NavItem>
+  </NavContainer>
+);
+
+export const Header = ({ className, metaTitle }) => (
+  <OuterContainer className={className}>
+    <MetaData title={metaTitle} />
     <GlobalStyle />
-    <Nav>
-      <NavItem variant="nav" to="/">
-        Home
-      </NavItem>
-      <NavItem variant="nav" to="/blog">
-        Blog
-      </NavItem>
-    </Nav>
+    <Navbar />
   </OuterContainer>
 );

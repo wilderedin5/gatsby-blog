@@ -10,7 +10,7 @@ const Section = styled(BaseSection)`
 `;
 
 const IndexPage = () => (
-  <Layout title="Home page">
+  <Layout metaTitle="Home page">
     <Container>
       <Section title="Welcome to the blog">
         But I must explain to you how all this mistaken idea of denouncing

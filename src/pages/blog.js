@@ -5,7 +5,7 @@ import { Section } from "../components/post/section";
 import { Layout } from "../components/layout";
 
 const BlogPage = ({ data }) => (
-  <Layout title="Blog page">
+  <Layout metaTitle="Blog page">
     <Container>
       <Section posts={data.posts.nodes} />
     </Container>

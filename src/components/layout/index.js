@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React from "react";
-import MetaData from "../page-metadata";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
@@ -16,10 +15,9 @@ const Main = styled.main`
   flex: 1;
 `;
 
-export const Layout = ({ children, title }) => (
+export const Layout = ({ children, metaTitle }) => (
   <Container>
-    <MetaData title={title} />
-    <Header />
+    <Header metaTitle={metaTitle} />
     <Main>{children}</Main>
     <Footer />
   </Container>
