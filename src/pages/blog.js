@@ -19,7 +19,9 @@ export const query = graphql`
     posts: allMdx {
       nodes {
         ...PostFragment
-        slug
+        fields {
+          slug
+        }
       }
     }
   }

@@ -7,7 +7,7 @@ export const Link = ({
   to,
   activeClassName,
   partiallyActive,
-  variant = "fill",
+  variant,
   ...rest
 }) => {
   const internal = /^\/(?!\/)/.test(to);

@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { jsx, Styled, Container } from "theme-ui";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import styled from "@emotion/styled";
-import { Post as BasePost } from "../components/post/post";
 import { Layout } from "../components/layout";
 
-const Post = styled(BasePost)`
-  border: none;
-  padding: 0;
+const Title = styled(Styled.h3)`
+  margin: 0;
 `;
 
 const PostTemplate = ({ data }) => {
@@ -18,7 +18,11 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout title={title}>
-      <Post title={title} content={body} img={preview.src.fluid} />
+      <Container>
+        <Img fluid={preview.src.fluid} />
+        <Title>{title}</Title>
+        <MDXRenderer>{body}</MDXRenderer>
+      </Container>
     </Layout>
   );
 };

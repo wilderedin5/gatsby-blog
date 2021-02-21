@@ -31,6 +31,9 @@ const styles = {
     mt: 0,
     mb: 3,
   },
+  a: {
+    textDecoration: "none",
+  },
 };
 
 const layout = {

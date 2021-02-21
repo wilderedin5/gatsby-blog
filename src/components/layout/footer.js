@@ -16,7 +16,7 @@ const InnerContainer = styled(Container)`
 export const Footer = () => (
   <OuterContainer>
     <InnerContainer>
-      <Link href="https://github.com/wilderedin5">
+      <Link variant="fill" href="https://github.com/wilderedin5">
         Open developer github page
       </Link>
     </InnerContainer>
