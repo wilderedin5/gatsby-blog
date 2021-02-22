@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
-import { PostLink } from "./post-link";
 import { mediaQueries } from "../../gatsby-plugin-theme-ui";
+import { PostLink } from "./post-link";
 
 const Container = styled.div`
   display: grid;

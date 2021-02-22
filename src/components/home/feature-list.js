@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import styled from "@emotion/styled";
 import { AnimateKeyframes } from "react-simple-animate";
+import { mediaQueries } from "../../gatsby-plugin-theme-ui";
 import { EmoIcon, GatsbyIcon, ReactIcon, TextIcon } from "../../assets/icons";
 import { Feature } from "./feature";
 
@@ -34,9 +35,16 @@ const FEATURES = [
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: ${(p) => p.theme.space[4]};
   grid-row-gap: ${(p) => p.theme.space[4]};
+
+  ${mediaQueries.sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ${mediaQueries.md} {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const animationSettings = {

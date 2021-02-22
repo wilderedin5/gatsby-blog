@@ -34,14 +34,20 @@ const colors = {
 
 const styles = {
   h1: {
-    fontSize: 8,
+    fontSize: 6,
     mt: 4,
     mb: 3,
+    [mediaQueries.lg]: {
+      fontSize: 8,
+    },
   },
   h3: {
-    fontSize: 5,
+    fontSize: 3,
     mt: 0,
     mb: 3,
+    [mediaQueries.lg]: {
+      fontSize: 5,
+    },
   },
   a: {
     textDecoration: "none",
