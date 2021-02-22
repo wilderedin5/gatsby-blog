@@ -5,8 +5,19 @@ const fontSizes = [0.75, 0.875, 1, 1.25, 1.5, 2, 3, 4, 4.5].map(
 );
 
 const sizes = {
+  xs: "440px",
+  sm: "540px",
+  md: "768px",
   lg: "1240px",
 };
+
+export const mediaQueries = Object.keys(sizes).reduce(
+  (mediaQueries, breakpointValue) => ({
+    ...mediaQueries,
+    [breakpointValue]: `@media (min-width: ${sizes[breakpointValue]})`,
+  }),
+  {}
+);
 
 const baseColors = {
   text: "#000",
