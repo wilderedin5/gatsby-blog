@@ -8,20 +8,32 @@ const Container = styled.div`
 `;
 
 const CategoriesItem = styled.div`
+  border: ${(p) =>
+    `2px solid ${p.active ? p.theme.colors.black : "transparent"}`};
   padding: ${(p) => `${p.theme.space[2]} ${p.theme.space[3]}`};
-  background: ${(p) => p.theme.colors.primary};
+  margin-right: ${(p) => p.theme.space[2]};
+  background: ${(p) => (p.active ? "transparent" : p.theme.colors.primary)};
+  color: ${(p) => (p.active ? p.theme.colors.black : p.theme.colors.white)};
+  cursor: pointer;
 
-  & + & {
-    margin-left: ${(p) => p.theme.space[2]};
+  :hover {
+    background: transparent;
+    color: ${(p) => p.theme.colors.black};
+    border-color: ${(p) => p.theme.colors.black};
   }
 `;
 
-export const CategoriesList = ({ onChange, className }) => {
+export const CategoriesList = ({ selectedCategory, onChange, className }) => {
   const categories = useCategories();
+
   return (
     <Container className={className}>
       {categories.map((category, index) => (
-        <CategoriesItem onClick={() => onChange(category)} key={index}>
+        <CategoriesItem
+          active={category === selectedCategory}
+          onClick={() => onChange(category)}
+          key={index}
+        >
           {category}
         </CategoriesItem>
       ))}

@@ -18,7 +18,7 @@ export const useCategories = () => {
     `
   );
   return [
-    ...categories.group.map(({ nodes }) => nodes[0].frontmatter.category),
     "All",
+    ...categories.group.map(({ nodes }) => nodes[0].frontmatter.category),
   ];
 };

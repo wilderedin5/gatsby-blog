@@ -26,7 +26,10 @@ const BlogPage = ({ data }) => {
   return (
     <Layout metaTitle="Blog page">
       <Container>
-        <StyledCategoriesList onChange={handleCategorySelect} />
+        <StyledCategoriesList
+          selectedCategory={selectedCategory}
+          onChange={handleCategorySelect}
+        />
         <Posts posts={formatPosts} />
       </Container>
     </Layout>
