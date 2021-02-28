@@ -3,6 +3,7 @@ import { jsx, Styled } from "theme-ui";
 import styled from "@emotion/styled";
 import Img from "gatsby-image";
 import { Link as BaseLink } from "../shared/link";
+import { useLatestPost } from "./hooks/use-latest-post";
 
 const Title = styled(Styled.h3)`
   margin: 0;
@@ -11,6 +12,23 @@ const Title = styled(Styled.h3)`
 const Info = styled.div`
   position: relative;
   padding: ${(p) => p.theme.space[3]};
+
+  :before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: ${(p) => `repeating-linear-gradient(
+      -45deg,
+      ${p.theme.colors.black},
+      ${p.theme.colors.black} 10px,
+      ${p.theme.colors.secondary} 10px,
+      ${p.theme.colors.secondary} 20px
+      )`};
+  }
 `;
 
 const Description = styled.p`
@@ -28,30 +46,24 @@ const Link = styled(BaseLink)`
     box-shadow: ${(p) => `0 0 12px 0 ${p.theme.colors.secondary}`};
 
     ${Title}, ${Description} {
-      position: relative;
-      z-index: 1;
       color: ${(p) => p.theme.colors.white};
       filter: ${(p) => `drop-shadow(2px 2px 0 ${p.theme.colors.black})`};
     }
 
     ${Info}:before {
       content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.7;
-      background: ${(p) => `repeating-linear-gradient(
-      -45deg,
-      ${p.theme.colors.black},
-      ${p.theme.colors.black} 10px,
-      ${p.theme.colors.secondary} 10px,
-      ${p.theme.colors.secondary} 20px
-      )`};
     }
   }
+`;
+
+const Label = styled.div`
+  padding: ${(p) => `${p.theme.space[2]} ${p.theme.space[3]}`};
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background: ${(p) => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.white};
 `;
 
 export const PostLink = ({ post, className }) => {
@@ -60,12 +72,16 @@ export const PostLink = ({ post, className }) => {
     fields: { slug },
   } = post;
 
+  const latestPost = useLatestPost();
+  const isLatest = title === latestPost;
+
   return (
     <Link to={slug} className={className}>
       <Img fluid={preview.src.fluid} />
       <Info>
         <Title>{title}</Title>
         <Description>{description}</Description>
+        {isLatest && <Label>Latest</Label>}
       </Info>
     </Link>
   );
