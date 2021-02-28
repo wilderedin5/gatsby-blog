@@ -5,6 +5,7 @@ export const PostFragment = graphql`
     frontmatter {
       title
       description
+      category
       preview {
         src: childImageSharp {
           fluid {
