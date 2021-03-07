@@ -2,26 +2,20 @@
 import { useState } from 'react'
 import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
-import { graphql } from 'gatsby'
 import { Posts } from '../components/blog/posts'
 import { Layout } from '../components/layout'
 import { CategoriesList } from '../components/blog/categories-list'
+import { usePosts } from '../components/blog/hooks/use-posts'
 
 const StyledCategoriesList = styled(CategoriesList)`
   margin-bottom: ${p => p.theme.space[3]};
 `
 
-const BlogPage = ({ data }) => {
+const BlogPage = () => {
   const [selectedCategory, setCategory] = useState('All')
+  const posts = usePosts(selectedCategory)
 
-  const formatPosts = data.posts.nodes.filter(
-    ({ frontmatter: { category } }) =>
-      selectedCategory === 'All' || category === selectedCategory,
-  )
-
-  const handleCategorySelect = category => {
-    setCategory(category)
-  }
+  const handleCategorySelect = category => setCategory(category)
 
   return (
     <Layout metaTitle="Blog page">
@@ -30,23 +24,10 @@ const BlogPage = ({ data }) => {
           selectedCategory={selectedCategory}
           onChange={handleCategorySelect}
         />
-        <Posts posts={formatPosts} />
+        <Posts posts={posts} />
       </Container>
     </Layout>
   )
 }
 
 export default BlogPage
-
-export const query = graphql`
-  query AllPosts {
-    posts: allMdx {
-      nodes {
-        ...PostFragment
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`
