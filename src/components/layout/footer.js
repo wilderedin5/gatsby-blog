@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
-import styled from "@emotion/styled";
-import { Link } from "../shared/link";
+import { jsx, Container } from 'theme-ui'
+import styled from '@emotion/styled'
+import { Link } from '../shared/link'
 
 const OuterContainer = styled.div`
-  background: ${(p) => p.theme.colors.secondary};
-`;
+  background: ${p => p.theme.colors.secondary};
+`
 
 const InnerContainer = styled(Container)`
-  padding: ${(p) => p.theme.space[4]};
-  color: ${(p) => p.theme.colors.white};
+  padding: ${p => p.theme.space[4]};
+  color: ${p => p.theme.colors.white};
   text-align: center;
-`;
+`
 
 export const Footer = () => (
   <OuterContainer>
@@ -21,4 +21,4 @@ export const Footer = () => (
       </Link>
     </InnerContainer>
   </OuterContainer>
-);
+)

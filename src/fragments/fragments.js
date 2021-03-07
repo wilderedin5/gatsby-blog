@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby'
 
 export const PostFragment = graphql`
   fragment PostFragment on Mdx {
@@ -15,4 +15,4 @@ export const PostFragment = graphql`
       }
     }
   }
-`;
+`

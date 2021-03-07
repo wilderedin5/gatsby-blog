@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import styled from "@emotion/styled";
-import { mediaQueries } from "../../gatsby-plugin-theme-ui";
-import { PostLink } from "./post-link";
+import { jsx } from 'theme-ui'
+import styled from '@emotion/styled'
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
+import { PostLink } from './post-link'
 
 const Container = styled.div`
   display: grid;
-  grid-column-gap: ${(p) => p.theme.space[4]};
-  grid-row-gap: ${(p) => p.theme.space[4]};
+  grid-column-gap: ${p => p.theme.space[4]};
+  grid-row-gap: ${p => p.theme.space[4]};
 
   ${mediaQueries.sm} {
     grid-template-columns: repeat(2, 1fr);
@@ -16,7 +16,7 @@ const Container = styled.div`
   ${mediaQueries.md} {
     grid-template-columns: repeat(3, 1fr);
   }
-`;
+`
 
 export const Posts = ({ posts, className }) => (
   <Container className={className}>
@@ -24,4 +24,4 @@ export const Posts = ({ posts, className }) => (
       <PostLink post={post} key={index} />
     ))}
   </Container>
-);
+)

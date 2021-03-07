@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const useLatestPost = () => {
   const { latestPost } = useStaticQuery(
@@ -16,7 +16,7 @@ export const useLatestPost = () => {
           }
         }
       }
-    `
-  );
-  return latestPost.nodes[0].frontmatter.title;
-};
+    `,
+  )
+  return latestPost.nodes[0].frontmatter.title
+}

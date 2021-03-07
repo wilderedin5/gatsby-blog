@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import styled from "@emotion/styled";
-import Img from "gatsby-image";
-import { Link as BaseLink } from "../shared/link";
-import { useLatestPost } from "./hooks/use-latest-post";
+import { jsx, Styled } from 'theme-ui'
+import styled from '@emotion/styled'
+import Img from 'gatsby-image'
+import { Link as BaseLink } from '../shared/link'
+import { useLatestPost } from './hooks/use-latest-post'
 
 const Title = styled(Styled.h3)`
   margin: 0;
-`;
+`
 
 const Info = styled.div`
   position: relative;
-  padding: ${(p) => p.theme.space[3]};
+  padding: ${p => p.theme.space[3]};
 
   :before {
     position: absolute;
@@ -21,7 +21,7 @@ const Info = styled.div`
     right: 0;
     z-index: -1;
     opacity: 0.7;
-    background: ${(p) => `repeating-linear-gradient(
+    background: ${p => `repeating-linear-gradient(
       -45deg,
       ${p.theme.colors.black},
       ${p.theme.colors.black} 10px,
@@ -29,51 +29,51 @@ const Info = styled.div`
       ${p.theme.colors.secondary} 20px
       )`};
   }
-`;
+`
 
 const Description = styled.p`
   margin: 0;
-`;
+`
 
 const Link = styled(BaseLink)`
-  border: 2px solid ${(p) => p.theme.colors.primary};
-  color: ${(p) => p.theme.colors.text};
+  border: 2px solid ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.text};
   text-decoration: none;
-  box-shadow: ${(p) => `0 0 12px 0 ${p.theme.colors.primary}`};
+  box-shadow: ${p => p.theme.shadows.primary};
 
   :hover {
-    border-color: ${(p) => p.theme.colors.secondary};
-    box-shadow: ${(p) => `0 0 12px 0 ${p.theme.colors.secondary}`};
+    border-color: ${p => p.theme.colors.secondary};
+    box-shadow: ${p => p.theme.shadows.secondary};
 
     ${Title}, ${Description} {
-      color: ${(p) => p.theme.colors.white};
-      filter: ${(p) => `drop-shadow(2px 2px 0 ${p.theme.colors.black})`};
+      color: ${p => p.theme.colors.white};
+      filter: ${p => `drop-shadow(2px 2px 0 ${p.theme.colors.black})`};
     }
 
     ${Info}:before {
-      content: "";
+      content: '';
     }
   }
-`;
+`
 
 const Label = styled.div`
-  padding: ${(p) => `${p.theme.space[2]} ${p.theme.space[3]}`};
+  padding: ${p => `${p.theme.space[2]} ${p.theme.space[3]}`};
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
-  background: ${(p) => p.theme.colors.primary};
-  color: ${(p) => p.theme.colors.white};
-`;
+  background: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.white};
+`
 
 export const PostLink = ({ post, className }) => {
   const {
     frontmatter: { preview, title, description },
     fields: { slug },
-  } = post;
+  } = post
 
-  const latestPost = useLatestPost();
-  const isLatest = title === latestPost;
+  const latestPost = useLatestPost()
+  const isLatest = title === latestPost
 
   return (
     <Link to={slug} className={className}>
@@ -84,5 +84,5 @@ export const PostLink = ({ post, className }) => {
         {isLatest && <Label>Latest</Label>}
       </Info>
     </Link>
-  );
-};
+  )
+}

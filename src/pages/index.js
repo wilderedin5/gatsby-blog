@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
-import styled from "@emotion/styled";
-import { Layout } from "../components/layout";
-import { Section as BaseSection } from "../components/home/section";
-import { Features } from "../components/home/features";
+import { jsx, Container } from 'theme-ui'
+import styled from '@emotion/styled'
+import { Layout } from '../components/layout'
+import { Section as BaseSection } from '../components/home/section'
+import { Features } from '../components/home/features'
 
 const Section = styled(BaseSection)`
-  margin-bottom: ${(p) => p.theme.space[5]};
-`;
+  margin-bottom: ${p => p.theme.space[5]};
+`
 
 const IndexPage = () => (
   <Layout metaTitle="Home page">
@@ -24,6 +24,6 @@ const IndexPage = () => (
       <Features />
     </Container>
   </Layout>
-);
+)
 
-export default IndexPage;
+export default IndexPage

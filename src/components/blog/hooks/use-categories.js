@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const useCategories = () => {
   const { categories } = useStaticQuery(
@@ -15,10 +15,10 @@ export const useCategories = () => {
           }
         }
       }
-    `
-  );
+    `,
+  )
   return [
-    "All",
+    'All',
     ...categories.group.map(({ nodes }) => nodes[0].frontmatter.category),
-  ];
-};
+  ]
+}

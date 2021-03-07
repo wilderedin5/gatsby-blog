@@ -1,42 +1,42 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import styled from "@emotion/styled";
-import { AnimateKeyframes } from "react-simple-animate";
-import { mediaQueries } from "../../gatsby-plugin-theme-ui";
-import { EmoIcon, GatsbyIcon, ReactIcon, TextIcon } from "../../assets/icons";
-import { Feature } from "./feature";
+import { jsx } from 'theme-ui'
+import styled from '@emotion/styled'
+import { AnimateKeyframes } from 'react-simple-animate'
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
+import { EmoIcon, GatsbyIcon, ReactIcon, TextIcon } from '../../assets/icons'
+import { Feature } from './feature'
 
 const FEATURES = [
   {
-    title: "React",
+    title: 'React',
     icon: ReactIcon,
     description:
-      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain",
+      'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain',
   },
   {
-    title: "Gatsby",
+    title: 'Gatsby',
     icon: GatsbyIcon,
     description:
-      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain",
+      'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain',
   },
   {
-    title: "Emotion",
+    title: 'Emotion',
     icon: EmoIcon,
     description:
-      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain",
+      'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain',
   },
   {
-    title: "Mdx",
+    title: 'Mdx',
     icon: TextIcon,
     description:
-      "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain",
+      'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain',
   },
-];
+]
 
 const Container = styled.div`
   display: grid;
-  grid-column-gap: ${(p) => p.theme.space[4]};
-  grid-row-gap: ${(p) => p.theme.space[4]};
+  grid-column-gap: ${p => p.theme.space[4]};
+  grid-row-gap: ${p => p.theme.space[4]};
 
   ${mediaQueries.sm} {
     grid-template-columns: repeat(2, 1fr);
@@ -45,7 +45,7 @@ const Container = styled.div`
   ${mediaQueries.md} {
     grid-template-columns: repeat(3, 1fr);
   }
-`;
+`
 
 const animationSettings = {
   play: true,
@@ -53,15 +53,15 @@ const animationSettings = {
   duration: 0.5,
   iterationCount: 4,
   keyframes: [
-    { 0: "transform: translateX(0%)" },
-    { 15: "transform: scale(0.91)" },
-    { 30: "transform: translateX(-30px) rotate(6deg)" },
-    { 45: "transform: translateX(15px) rotate(-6deg)" },
-    { 60: "transform: translateX(-15px) rotate(3.6deg)" },
-    { 75: "transform: translateX(9px) rotate(-2.4deg)" },
-    { 100: "transform: translateX(-6px) rotate(1.2deg)" },
+    { 0: 'transform: translateX(0%)' },
+    { 15: 'transform: scale(0.91)' },
+    { 30: 'transform: translateX(-30px) rotate(6deg)' },
+    { 45: 'transform: translateX(15px) rotate(-6deg)' },
+    { 60: 'transform: translateX(-15px) rotate(3.6deg)' },
+    { 75: 'transform: translateX(9px) rotate(-2.4deg)' },
+    { 100: 'transform: translateX(-6px) rotate(1.2deg)' },
   ],
-};
+}
 
 export const FeatureList = ({ className }) => (
   <Container className={className}>
@@ -71,4 +71,4 @@ export const FeatureList = ({ className }) => (
       </AnimateKeyframes>
     ))}
   </Container>
-);
+)
