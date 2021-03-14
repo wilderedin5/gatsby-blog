@@ -6,12 +6,11 @@ import { Link as BaseLink } from '../shared/link'
 import { useLatestPost } from './hooks/use-latest-post'
 
 const Title = styled(Styled.h3)`
-  margin: 0;
+  margin: ${p => `0 0 ${p.theme.space[0]}`};
 `
 
 const Info = styled.div`
-  position: relative;
-  padding: ${p => p.theme.space[3]};
+  padding: ${p => `${p.theme.space[4]} ${p.theme.space[3]}`};
 
   :before {
     position: absolute;
@@ -36,6 +35,7 @@ const Description = styled.p`
 `
 
 const Link = styled(BaseLink)`
+  position: relative;
   border: 2px solid ${p => p.theme.colors.primary};
   color: ${p => p.theme.colors.text};
   text-decoration: none;
@@ -57,11 +57,12 @@ const Link = styled(BaseLink)`
 `
 
 const Label = styled.div`
-  padding: ${p => `${p.theme.space[2]} ${p.theme.space[3]}`};
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
+  font-size: ${p => p.theme.fontSizes[0]};
+  padding: ${p => `${p.theme.space[0]} ${p.theme.space[1]}`};
   background: ${p => p.theme.colors.primary};
   color: ${p => p.theme.colors.white};
 `
