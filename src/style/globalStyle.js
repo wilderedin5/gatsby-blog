@@ -9,6 +9,7 @@ export const GlobalStyle = (props) => (
       },
       body: {
         margin: 0,
+        fontFamily: theme.fontFamily.body
       },
     })}
   />

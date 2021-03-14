@@ -109,6 +109,10 @@ const layout = {
   },
 }
 
+const fontFamily = {
+  body: 'Montserrat, sans-serif'
+}
+
 const shadows = {
   primary: `0 0 12px 0 ${colors.primary}`,
   secondary: `0 0 12px 0 ${colors.secondary}`,
@@ -139,6 +143,7 @@ const links = {
 export const theme = {
   space,
   fontSizes,
+  fontFamily,
   colors,
   sizes,
   styles,
