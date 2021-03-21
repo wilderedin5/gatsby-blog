@@ -2,7 +2,7 @@
 import { jsx, Styled } from 'theme-ui'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
-import { Link as BaseLink } from '../shared/link'
+import { Link } from '../shared/link'
 import { useLatestPost } from './hooks/use-latest-post'
 
 const Title = styled(Styled.h3)`
@@ -34,7 +34,7 @@ const Description = styled.p`
   margin: 0;
 `
 
-const Link = styled(BaseLink)`
+const StyledLink = styled(Link)`
   position: relative;
   border: 2px solid ${p => p.theme.colors.primary};
   color: ${p => p.theme.colors.text};
@@ -73,17 +73,16 @@ export const PostLink = ({ post, className }) => {
     fields: { slug },
   } = post
 
-  const latestPost = useLatestPost()
-  const isLatest = title === latestPost
+  const isLatest = useLatestPost(title)
 
   return (
-    <Link to={slug} className={className}>
+    <StyledLink to={slug} className={className}>
       <Img fluid={preview.src.fluid} />
       <Info>
         <Title>{title}</Title>
         <Description>{description}</Description>
         {isLatest && <Label>Latest</Label>}
       </Info>
-    </Link>
+    </StyledLink>
   )
 }

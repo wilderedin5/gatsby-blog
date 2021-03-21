@@ -3,7 +3,7 @@ import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
 import { GlobalStyle } from '../../style/globalStyle'
 import MetaData from '../page-metadata'
-import { Link as BaseLink } from '../shared/link'
+import { Link } from '../shared/link'
 
 const OuterContainer = styled.div`
   background: ${p => p.theme.colors.primary};
@@ -16,7 +16,7 @@ const NavContainer = styled(Container)`
   text-align: center;
 `
 
-const NavItem = styled(BaseLink)`
+const NavItem = styled(Link)`
   & + & {
     margin-left: ${p => p.theme.space[3]};
   }

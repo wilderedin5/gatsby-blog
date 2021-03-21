@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby'
 
-export const useLatestPost = () => {
+export const useLatestPost = post => {
   const { latestPost } = useStaticQuery(
     graphql`
       query LatestPost {
@@ -18,5 +18,5 @@ export const useLatestPost = () => {
       }
     `,
   )
-  return latestPost.nodes[0].frontmatter.title
+  return post === latestPost.nodes[0].frontmatter.title
 }
