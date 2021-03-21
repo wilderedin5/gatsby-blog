@@ -9,7 +9,7 @@ const Container = styled.div`
   grid-column-gap: ${p => p.theme.space[3]};
   grid-row-gap: ${p => p.theme.space[2]};
   align-items: center;
-  border: ${p => `1px solid ${p.theme.colors.primary}`};
+  border: ${p => `2px solid ${p.theme.colors.primary}`};
   padding: ${p => p.theme.space[3]};
   box-shadow: ${p => p.theme.shadows.primary};
 `

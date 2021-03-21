@@ -9,13 +9,27 @@ const StyledHero = styled(Hero)`
   margin-bottom: ${p => p.theme.space[5]};
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout metaTitle="Home page">
     <Container>
-      <StyledHero />
+      <StyledHero image={data.heroImage} />
       <Features />
     </Container>
   </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    heroImage: file(
+      relativePath: { eq: "images/general/gatsby-astronaut.png" }
+    ) {
+      childImageSharp {
+        fluid(quality: 75) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
