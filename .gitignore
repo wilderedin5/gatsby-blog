@@ -71,3 +71,4 @@ yarn-error.log
 # IDE files
 .idea
 package-lock.json
+public/

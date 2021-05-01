@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
+import { graphql } from 'gatsby'
+
 import { Layout } from '../components/layout'
 import { Hero } from '../components/home/hero'
 import { Features } from '../components/home/features'
