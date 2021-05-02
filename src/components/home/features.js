@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 import styled from '@emotion/styled'
+
 import { FeatureList } from './feature-list'
 
 const Container = styled.div``
 
-const Title = styled(Styled.h1)`
+const Title = styled(Themed.h1)`
   text-align: center;
   margin-bottom: ${p => p.theme.space[4]};
 `

@@ -1,7 +1,7 @@
 /** @jsx jsx */
+import { useState } from 'react'
 import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
-import { useState } from 'react'
 
 const Container = styled.div`
   position: relative;
@@ -26,9 +26,7 @@ const Front = styled(Card)`
 export const CardFlip = ({ children, className }) => {
   const [isFlipped, setFlipped] = useState(false)
 
-  const handleFlipChange = () => {
-    setFlipped(!isFlipped)
-  }
+  const handleFlipChange = () => setFlipped(!isFlipped)
 
   return (
     <Container

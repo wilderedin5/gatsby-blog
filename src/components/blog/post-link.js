@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
-import styled from '@emotion/styled'
+import { jsx, Themed } from 'theme-ui'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import styled from '@emotion/styled'
+
 import { Link } from '../shared/link'
 import { useLatestPost } from './hooks/use-latest-post'
 
-const Title = styled(Styled.h3)`
+const Title = styled(Themed.h3)`
   margin: ${p => `0 0 ${p.theme.space[0]}`};
 `
 
@@ -34,7 +35,7 @@ const Description = styled.p`
   margin: 0;
 `
 
-const StyledLink = styled(Link)`
+const $Link = styled(Link)`
   position: relative;
   border: 2px solid ${p => p.theme.colors.primary};
   color: ${p => p.theme.colors.text};
@@ -68,21 +69,20 @@ const Label = styled.div`
 `
 
 export const PostLink = ({ post, className }) => {
+  const latestPost = useLatestPost()
   const {
     frontmatter: { preview, title, description },
     fields: { slug },
   } = post
 
-  const isLatest = useLatestPost(title)
-
   return (
-    <StyledLink to={slug} className={className}>
+    <$Link to={slug} className={className}>
       <GatsbyImage image={getImage(preview.childImageSharp.gatsbyImageData)} />
       <Info>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        {isLatest && <Label>Latest</Label>}
+        {title === latestPost && <Label>Latest</Label>}
       </Info>
-    </StyledLink>
+    </$Link>
   )
 }

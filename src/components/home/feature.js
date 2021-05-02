@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
-import styled from '@emotion/styled'
+import { jsx, Themed } from 'theme-ui'
 import { AnimateKeyframes } from 'react-simple-animate'
+import styled from '@emotion/styled'
 
 const Container = styled.div`
   display: grid;
@@ -14,7 +14,7 @@ const Container = styled.div`
   box-shadow: ${p => p.theme.shadows.primary};
 `
 
-const Title = styled(Styled.h3)`
+const Title = styled(Themed.h3)`
   margin: 0;
 `
 

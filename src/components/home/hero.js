@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
-import styled from '@emotion/styled'
+import { jsx, Themed } from 'theme-ui'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import styled from '@emotion/styled'
 
 const Container = styled.div`
   display: flex;
@@ -11,10 +11,10 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  width: 60%;
+  max-width: 60%;
 `
 
-const Title = styled(Styled.h1)`
+const Title = styled(Themed.h1)`
   margin: ${p => `0 0 ${p.theme.space[2]}`};
 `
 
@@ -22,7 +22,7 @@ const Lead = styled.p`
   margin: 0;
 `
 
-const StyledImg = styled(GatsbyImage)`
+const $GatsbyImage = styled(GatsbyImage)`
   flex: 1;
 `
 
@@ -40,6 +40,6 @@ export const Hero = ({ image, className }) => (
         encounter consequences that are extremely painful.
       </Lead>
     </Content>
-    <StyledImg image={getImage(image.childImageSharp.gatsbyImageData)} />
+    <$GatsbyImage image={getImage(image.childImageSharp.gatsbyImageData)} />
   </Container>
 )

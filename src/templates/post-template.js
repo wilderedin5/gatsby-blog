@@ -1,12 +1,13 @@
 /** @jsx jsx */
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { jsx, Styled, Container } from 'theme-ui'
 import { graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { jsx, Container, Themed } from 'theme-ui'
 import styled from '@emotion/styled'
+
 import { Layout } from '../components/layout'
 
-const Title = styled(Styled.h3)`
+const Title = styled(Themed.h3)`
   margin: 0;
 `
 

@@ -1,30 +1,29 @@
 /** @jsx jsx */
-import { useState } from 'react'
 import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
+
 import { Posts } from '../components/blog/posts'
 import { Layout } from '../components/layout'
-import { CategoriesList } from '../components/blog/categories-list'
-import { usePosts } from '../components/blog/hooks/use-posts'
+import { CategoryList } from '../components/blog/category-list'
+import { useCategory } from '../components/blog/hooks/use-category'
 
-const StyledCategoriesList = styled(CategoriesList)`
+const $CategoryList = styled(CategoryList)`
   margin-bottom: ${p => p.theme.space[3]};
 `
 
 const BlogPage = () => {
-  const [selectedCategory, setCategory] = useState('All')
-  const posts = usePosts(selectedCategory)
+  const [category, setCategory] = useCategory()
 
   const handleCategorySelect = category => setCategory(category)
 
   return (
     <Layout metaTitle="Blog page">
       <Container>
-        <StyledCategoriesList
-          selectedCategory={selectedCategory}
+        <$CategoryList
+          selected={category.name}
           onChange={handleCategorySelect}
         />
-        <Posts posts={posts} />
+        <Posts posts={category.posts} />
       </Container>
     </Layout>
   )

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Helmet } from 'react-helmet'
-import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 const MetaData = ({ title, description, image, article }) => {
   const { pathname } = useLocation()

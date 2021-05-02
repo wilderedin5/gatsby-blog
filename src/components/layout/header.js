@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
+
 import { GlobalStyle } from '../../style/globalStyle'
 import MetaData from '../page-metadata'
 import { Link } from '../shared/link'
