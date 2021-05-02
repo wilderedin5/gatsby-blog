@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
 import styled from '@emotion/styled'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from '../shared/link'
 import { useLatestPost } from './hooks/use-latest-post'
 
@@ -77,7 +77,7 @@ export const PostLink = ({ post, className }) => {
 
   return (
     <StyledLink to={slug} className={className}>
-      <Img fluid={preview.src.fluid} />
+      <GatsbyImage image={getImage(preview.childImageSharp.gatsbyImageData)} />
       <Info>
         <Title>{title}</Title>
         <Description>{description}</Description>

@@ -7,10 +7,8 @@ export const PostFragment = graphql`
       description
       category
       preview {
-        src: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }

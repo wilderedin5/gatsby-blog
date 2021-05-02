@@ -2,7 +2,7 @@
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { jsx, Styled, Container } from 'theme-ui'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 import { Layout } from '../components/layout'
 
@@ -19,7 +19,9 @@ const PostTemplate = ({ data }) => {
   return (
     <Layout title={title}>
       <Container>
-        <Img fluid={preview.src.fluid} />
+        <GatsbyImage
+          image={getImage(preview.childImageSharp.gatsbyImageData)}
+        />
         <Title>{title}</Title>
         <MDXRenderer>{body}</MDXRenderer>
       </Container>

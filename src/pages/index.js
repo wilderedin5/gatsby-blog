@@ -28,9 +28,7 @@ export const query = graphql`
       relativePath: { eq: "images/general/gatsby-astronaut.png" }
     ) {
       childImageSharp {
-        fluid(quality: 75) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData
       }
     }
   }
