@@ -8,7 +8,7 @@ import { Hero } from '../components/home/hero'
 import { Features } from '../components/home/features'
 
 const $Hero = styled(Hero)`
-  margin-bottom: ${p => p.theme.space[5]};
+  margin-bottom: ${p => p.theme.space[10]};
 `
 
 const IndexPage = ({ data }) => (

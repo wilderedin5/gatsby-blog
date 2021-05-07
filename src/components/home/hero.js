@@ -2,6 +2,7 @@
 import { jsx, Themed } from 'theme-ui'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +12,9 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  max-width: 60%;
+  ${mediaQueries.lg} {
+    max-width: 60%;
+  }
 `
 
 const Title = styled(Themed.h1)`
@@ -23,7 +26,12 @@ const Lead = styled.p`
 `
 
 const $GatsbyImage = styled(GatsbyImage)`
+  display: none;
   flex: 1;
+
+  ${mediaQueries.lg} {
+    display: block;
+  }
 `
 
 export const Hero = ({ image, className }) => (

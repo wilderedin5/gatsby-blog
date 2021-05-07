@@ -3,15 +3,25 @@ import { jsx, Themed } from 'theme-ui'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
 
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
 import { Link } from '../shared/link'
 import { useLatestPost } from './hooks/use-latest-post'
 
 const Title = styled(Themed.h3)`
   margin: ${p => `0 0 ${p.theme.space[0]}`};
+  font-size: ${p => p.theme.fontSizes[2]};
+
+  ${mediaQueries.md} {
+    font-size: ${p => p.theme.fontSizes[3]};
+  }
+
+  ${mediaQueries.lg} {
+    font-size: ${p => p.theme.fontSizes[5]};
+  }
 `
 
 const Info = styled.div`
-  padding: ${p => `${p.theme.space[4]} ${p.theme.space[3]}`};
+  padding: ${p => `${p.theme.space[3]} ${p.theme.space[2]}`};
 
   :before {
     position: absolute;

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
 import { Footer } from './footer'
 import { Header } from './header'
 
@@ -12,8 +13,12 @@ const Container = styled.div`
 `
 
 const Main = styled.main`
-  padding: ${p => `${p.theme.space[5]} 0`};
+  padding: ${p => `${p.theme.space[8]} 0`};
   flex: 1;
+
+  ${mediaQueries.lg} {
+    padding: ${p => `${p.theme.space[16]} 0`};
+  }
 `
 
 export const Layout = ({ children, metaTitle }) => (

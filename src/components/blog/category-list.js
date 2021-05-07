@@ -2,10 +2,17 @@
 import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
 
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
 import { useCategories } from './hooks/use-categories'
 
 const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: ${p => p.theme.space[1]};
+
+  ${mediaQueries.md} {
+    display: flex;
+  }
 `
 
 const Category = styled.div`

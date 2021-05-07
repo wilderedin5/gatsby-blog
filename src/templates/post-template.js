@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from '@mdx-js/react'
 import { getImage } from 'gatsby-plugin-image'
 import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
@@ -8,9 +9,15 @@ import styled from '@emotion/styled'
 import { Layout } from '../components/layout'
 import { PostHeader } from '../components/blog/post-header'
 import { Hr } from '../components/shared/rule'
+import { Highlight } from '../components/shared/highlight'
+import { mediaQueries } from '../gatsby-plugin-theme-ui'
 
 const $Hr = styled(Hr)`
   margin: ${p => `${p.theme.space[4]} 0`};
+
+  ${mediaQueries.md} {
+    margin: ${p => `${p.theme.space[10]} 0`};
+  }
 `
 
 const PostTemplate = ({ data }) => {
@@ -18,6 +25,7 @@ const PostTemplate = ({ data }) => {
     frontmatter: { title, preview },
     body,
   } = data.page
+  const components = { Highlight }
 
   return (
     <Layout title={title}>
@@ -27,7 +35,9 @@ const PostTemplate = ({ data }) => {
           image={getImage(preview.childImageSharp.gatsbyImageData)}
         />
         <$Hr />
-        <MDXRenderer>{body}</MDXRenderer>
+        <MDXProvider components={components}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
         <$Hr />
       </Container>
     </Layout>
