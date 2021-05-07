@@ -77,7 +77,10 @@ export const PostLink = ({ post, className }) => {
 
   return (
     <$Link to={slug} className={className}>
-      <GatsbyImage image={getImage(preview.childImageSharp.gatsbyImageData)} />
+      <GatsbyImage
+        image={getImage(preview.childImageSharp.gatsbyImageData)}
+        alt=""
+      />
       <Info>
         <Title>{title}</Title>
         <Description>{description}</Description>

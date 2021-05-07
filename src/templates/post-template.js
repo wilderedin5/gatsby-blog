@@ -1,14 +1,16 @@
 /** @jsx jsx */
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { jsx, Container, Themed } from 'theme-ui'
+import { getImage } from 'gatsby-plugin-image'
+import { jsx, Container } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { Layout } from '../components/layout'
+import { PostHeader } from '../components/blog/post-header'
+import { Hr } from '../components/shared/rule'
 
-const Title = styled(Themed.h3)`
-  margin: 0;
+const $Hr = styled(Hr)`
+  margin: ${p => `${p.theme.space[4]} 0`};
 `
 
 const PostTemplate = ({ data }) => {
@@ -20,11 +22,13 @@ const PostTemplate = ({ data }) => {
   return (
     <Layout title={title}>
       <Container>
-        <GatsbyImage
+        <PostHeader
+          title={title}
           image={getImage(preview.childImageSharp.gatsbyImageData)}
         />
-        <Title>{title}</Title>
+        <$Hr />
         <MDXRenderer>{body}</MDXRenderer>
+        <$Hr />
       </Container>
     </Layout>
   )

@@ -40,6 +40,9 @@ export const Hero = ({ image, className }) => (
         encounter consequences that are extremely painful.
       </Lead>
     </Content>
-    <$GatsbyImage image={getImage(image.childImageSharp.gatsbyImageData)} />
+    <$GatsbyImage
+      image={getImage(image.childImageSharp.gatsbyImageData)}
+      alt=""
+    />
   </Container>
 )

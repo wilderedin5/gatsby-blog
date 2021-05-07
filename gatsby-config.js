@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby blog",
+    title: 'Gatsby blog',
     description:
-      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-    url: "https://github.com/wilderedin5",
-    image: "/assets/images/general/gatsby-icon.png",
-    twitterUsername: "@wilderedin5",
+      'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
+    url: 'https://github.com/wilderedin5',
+    image: '/assets/images/general/gatsby-icon.png',
+    twitterUsername: '@wilderedin5',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,15 +26,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Montserrat`,
-          `300,400,600,700`
-        ],
-        display: 'swap'
-      }
+        fonts: [`Montserrat`, `300,400,600,700`],
+        display: 'swap',
+      },
     },
     {
-      resolve: "gatsby-plugin-svgr",
+      resolve: 'gatsby-plugin-svgr',
       options: {
         prettier: true,
         svgo: true,
@@ -54,6 +51,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -67,4 +65,4 @@ module.exports = {
       },
     },
   ],
-};
+}

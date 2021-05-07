@@ -110,7 +110,7 @@ const layout = {
 }
 
 const fontFamily = {
-  body: 'Montserrat, sans-serif'
+  body: 'Montserrat, sans-serif',
 }
 
 const shadows = {
