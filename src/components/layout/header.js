@@ -7,6 +7,9 @@ import MetaData from '../page-metadata'
 import { Link } from '../shared/link'
 
 const OuterContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background: ${p => p.theme.colors.primary};
 `
 

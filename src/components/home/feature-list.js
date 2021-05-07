@@ -8,8 +8,8 @@ import { Feature } from './feature'
 
 const Container = styled.div`
   display: grid;
-  grid-column-gap: ${p => p.theme.space[3]};
-  grid-row-gap: ${p => p.theme.space[3]};
+  grid-column-gap: ${p => p.theme.space[5]};
+  grid-row-gap: ${p => p.theme.space[5]};
 
   ${mediaQueries.sm} {
     grid-template-columns: repeat(2, 1fr);

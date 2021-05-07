@@ -20,8 +20,8 @@ const Category = styled.div`
     `2px solid ${p.active ? p.theme.colors.black : 'transparent'}`};
   padding: ${p => `${p.theme.space[0]} ${p.theme.space[3]}`};
   margin-right: ${p => p.theme.space[2]};
-  background: ${p => (p.active ? 'transparent' : p.theme.colors.primary)};
-  color: ${p => (p.active ? p.theme.colors.black : p.theme.colors.white)};
+  background: ${p => !p.active && p.theme.colors.primary};
+  color: ${p => !p.active && p.theme.colors.white};
   cursor: pointer;
 
   :hover {

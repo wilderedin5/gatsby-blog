@@ -52,6 +52,11 @@ const fontSizes = [
   7, // 23
 ].map(n => n + 'rem')
 
+const lineHeights = {
+  body: 1.75,
+  heading: 1.25,
+}
+
 const sizes = {
   xs: '440px',
   sm: '540px',
@@ -83,6 +88,7 @@ const colors = {
 
 const styles = {
   h1: {
+    lineHeight: 'heading',
     fontSize: 6,
     mt: 4,
     mb: 3,
@@ -91,6 +97,7 @@ const styles = {
     },
   },
   h3: {
+    lineHeight: 'heading',
     fontSize: 3,
     mt: 0,
     mb: 3,
@@ -100,9 +107,6 @@ const styles = {
   },
   a: {
     textDecoration: 'none',
-  },
-  p: {
-    lineHeight: 1.75,
   },
 }
 
@@ -148,6 +152,7 @@ export const theme = {
   space,
   fontSizes,
   fontFamily,
+  lineHeights,
   colors,
   sizes,
   styles,

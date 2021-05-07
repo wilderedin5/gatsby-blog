@@ -8,7 +8,7 @@ const Container = styled.div``
 
 const Title = styled(Themed.h1)`
   text-align: center;
-  margin-bottom: ${p => p.theme.space[4]};
+  margin: ${p => `0 0 ${p.theme.space[4]}`};
 `
 
 export const Features = ({ className }) => (

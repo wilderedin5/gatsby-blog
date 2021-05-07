@@ -6,8 +6,8 @@ import styled from '@emotion/styled'
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1.75rem auto;
-  grid-column-gap: ${p => p.theme.space[3]};
-  grid-row-gap: ${p => p.theme.space[2]};
+  grid-column-gap: ${p => p.theme.space[5]};
+  grid-row-gap: ${p => p.theme.space[0]};
   align-items: center;
   border: ${p => `2px solid ${p.theme.colors.primary}`};
   padding: ${p => p.theme.space[3]};

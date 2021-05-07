@@ -2,6 +2,7 @@
 import { jsx, Themed } from 'theme-ui'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from '@emotion/styled'
+
 import { mediaQueries } from '../../gatsby-plugin-theme-ui'
 
 const Container = styled.div`
@@ -27,10 +28,10 @@ const Lead = styled.p`
 
 const $GatsbyImage = styled(GatsbyImage)`
   display: none;
-  flex: 1;
 
   ${mediaQueries.lg} {
     display: block;
+    flex: 1;
   }
 `
 
