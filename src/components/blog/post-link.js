@@ -21,24 +21,8 @@ const Title = styled(Themed.h3)`
 `
 
 const Info = styled.div`
-  padding: ${p => `${p.theme.space[3]} ${p.theme.space[2]}`};
-
-  :before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    opacity: 0.7;
-    background: ${p => `repeating-linear-gradient(
-      -45deg,
-      ${p.theme.colors.black},
-      ${p.theme.colors.black} 10px,
-      ${p.theme.colors.secondary} 10px,
-      ${p.theme.colors.secondary} 20px
-      )`};
-  }
+  padding: ${p =>
+    `${p.theme.space[0]} ${p.theme.space[3]} ${p.theme.space[2]}`};
 `
 
 const Description = styled.p`
@@ -55,15 +39,6 @@ const $Link = styled(Link)`
   :hover {
     border-color: ${p => p.theme.colors.secondary};
     box-shadow: ${p => p.theme.shadows.secondary};
-
-    ${Title}, ${Description} {
-      color: ${p => p.theme.colors.white};
-      filter: ${p => `drop-shadow(2px 2px 0 ${p.theme.colors.black})`};
-    }
-
-    ${Info}:before {
-      content: '';
-    }
   }
 `
 
@@ -72,16 +47,21 @@ const Label = styled.div`
   top: 0;
   right: 0;
   z-index: 1;
-  font-size: ${p => p.theme.fontSizes[0]};
-  padding: ${p => `${p.theme.space[0]} ${p.theme.space[1]}`};
+  padding: ${p => p.theme.space[0]};
+  font-size: ${p => p.theme.fontSizes[2]};
   background: ${p => p.theme.colors.primary};
   color: ${p => p.theme.colors.white};
+`
+
+const Author = styled.div`
+  margin: ${p => `${p.theme.space[0]} 0`};
+  font-weight: ${p => p.theme.fontWeights.bold};
 `
 
 export const PostLink = ({ post, className }) => {
   const latestPost = useLatestPost()
   const {
-    frontmatter: { preview, title, description },
+    frontmatter: { preview, title, description, author },
     fields: { slug },
   } = post
 
@@ -93,6 +73,7 @@ export const PostLink = ({ post, className }) => {
       />
       <Info>
         <Title>{title}</Title>
+        <Author>Author: {author}</Author>
         <Description>{description}</Description>
         {title === latestPost && <Label>Latest</Label>}
       </Info>

@@ -58,6 +58,11 @@ const lineHeights = {
   heading: 1.25,
 }
 
+const fontWeights = {
+  bold: 600,
+  normal: 400,
+}
+
 const sizes = {
   xs: '440px',
   sm: '540px',
@@ -175,6 +180,7 @@ const forms = {
 }
 
 export const theme = {
+  fontWeights,
   forms,
   buttons,
   space,
