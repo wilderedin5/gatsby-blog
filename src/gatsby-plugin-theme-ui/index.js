@@ -26,30 +26,31 @@ const space = [
 ].map(n => n + 'rem')
 
 const fontSizes = [
-  0.75, // 0
-  1, // 1
-  1.25, // 2
-  1.5, // 3
-  1.75, // 4
-  2, // 5
-  2.25, // 6
-  2.5, // 7
-  2.75, // 8
-  3, // 9
-  3.25, // 10
-  3.5, // 11
-  3.75, // 12
-  4, // 13
-  4.25, // 14
-  4.5, // 15
-  4.75, // 16
-  5, // 17
-  5.25, // 18
-  5.5, // 19
-  5.75, // 20
-  6, // 21
-  6.5, // 22
-  7, // 23
+  0.5, // 0
+  0.825, // 1
+  1, // 2
+  1.25, // 3
+  1.5, // 4
+  1.75, // 5
+  2, // 6
+  2.25, // 7
+  2.5, // 8
+  2.75, // 9
+  3, // 10
+  3.25, // 11
+  3.5, // 12
+  3.75, // 13
+  4, // 14
+  4.25, // 15
+  4.5, // 16
+  4.75, // 17
+  5, // 18
+  5.25, // 19
+  5.5, // 20
+  5.75, // 21
+  6, // 22
+  6.5, // 23
+  7, // 24
 ].map(n => n + 'rem')
 
 const lineHeights = {
@@ -148,7 +149,34 @@ const links = {
   },
 }
 
+const buttons = {
+  primary: {
+    color: colors.white,
+    backgroundColor: colors.primary,
+
+    ':hover': {
+      backgroundColor: 'transparent',
+      color: colors.black,
+      borderColor: colors.black,
+    },
+  },
+}
+
+const forms = {
+  input: {
+    fontSize: 0,
+    borderWidth: '2px',
+    borderColor: colors.primary,
+
+    ':focus': {
+      outline: 'none',
+    },
+  },
+}
+
 export const theme = {
+  forms,
+  buttons,
   space,
   fontSizes,
   fontFamily,

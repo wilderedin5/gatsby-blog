@@ -4,26 +4,25 @@ import styled from '@emotion/styled'
 
 import { Posts } from '../components/blog/posts'
 import { Layout } from '../components/layout'
-import { CategoryList } from '../components/blog/category-list'
 import { useCategory } from '../components/blog/hooks/use-category'
+import { Toolbar } from '../components/blog/toolbar'
 
-const $CategoryList = styled(CategoryList)`
+const $Toolbar = styled(Toolbar)`
   margin-bottom: ${p => p.theme.space[3]};
 `
 
 const BlogPage = () => {
-  const [category, setCategory] = useCategory()
-
-  const handleCategorySelect = category => setCategory(category)
+  const { posts, category, filterByCategory, filterByName } = useCategory()
 
   return (
     <Layout metaTitle="Blog page">
       <Container>
-        <$CategoryList
-          selected={category.name}
-          onChange={handleCategorySelect}
+        <$Toolbar
+          category={category}
+          onCategory={filterByCategory}
+          onSearch={filterByName}
         />
-        <Posts posts={category.posts} />
+        <Posts posts={posts} />
       </Container>
     </Layout>
   )
