@@ -54,7 +54,7 @@ const fontSizes = [
 ].map(n => n + 'rem')
 
 const lineHeights = {
-  body: 1.75,
+  body: 1.5,
   heading: 1.25,
 }
 

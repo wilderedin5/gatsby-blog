@@ -3,17 +3,20 @@ import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
 import { useForm } from 'react-hook-form'
 
+import { mediaQueries } from '../../gatsby-plugin-theme-ui'
 import { Button } from '../shared/button'
 import { Input } from '../shared/input'
 
 const Form = styled.form`
   display: flex;
-  align-items: center;
 `
 
 const $Input = styled(Input)`
-  width: 20rem;
-  margin-right: ${p => p.theme.space[2]};
+  margin-right: ${p => p.theme.space[1]};
+
+  ${mediaQueries.md} {
+    width: 19rem;
+  }
 `
 
 export const SearchForm = ({ onChange }) => {

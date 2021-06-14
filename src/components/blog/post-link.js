@@ -27,6 +27,7 @@ const Info = styled.div`
 
 const Description = styled.p`
   margin: 0;
+  font-size: ${p => p.theme.fontSizes[1]};
 `
 
 const $Link = styled(Link)`
@@ -44,11 +45,11 @@ const $Link = styled(Link)`
 
 const Label = styled.div`
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   z-index: 1;
   padding: ${p => p.theme.space[0]};
-  font-size: ${p => p.theme.fontSizes[2]};
+  font-size: ${p => p.theme.fontSizes[1]};
   background: ${p => p.theme.colors.primary};
   color: ${p => p.theme.colors.white};
 `
@@ -56,6 +57,7 @@ const Label = styled.div`
 const Author = styled.div`
   margin: ${p => `${p.theme.space[0]} 0`};
   font-weight: ${p => p.theme.fontWeights.bold};
+  font-size: ${p => p.theme.fontSizes[1]};
 `
 
 export const PostLink = ({ post, className }) => {

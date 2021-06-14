@@ -15,6 +15,7 @@ export const Button = forwardRef(
         __themeKey="buttons"
         __css={css`
           display: inline-flex;
+          flex-shrink: 0;
           border: 2px solid transparent;
           cursor: pointer;
 
