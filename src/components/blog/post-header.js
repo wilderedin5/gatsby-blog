@@ -1,6 +1,6 @@
-/** @jsx jsx */
+import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { jsx, Themed } from 'theme-ui'
+import { Themed } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { mediaQueries } from '../../gatsby-plugin-theme-ui'

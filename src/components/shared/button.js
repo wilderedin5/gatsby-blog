@@ -1,7 +1,7 @@
-/** @jsx jsx */
+import React from 'react'
 import { css } from '@emotion/react'
 import { forwardRef } from 'react'
-import { Box, jsx, useThemeUI } from 'theme-ui'
+import { Box, useThemeUI } from 'theme-ui'
 
 export const Button = forwardRef(
   ({ children, variant = 'primary', size = 'medium', ...rest }, ref) => {

@@ -1,7 +1,7 @@
-/** @jsx jsx */
+import React from 'react'
 import { css } from '@emotion/react'
 import { forwardRef } from 'react'
-import { Input as ThemeInput, jsx, useThemeUI } from 'theme-ui'
+import { Input as ThemeInput, useThemeUI } from 'theme-ui'
 
 export const Input = forwardRef(
   ({ children, size = 'medium', ...rest }, ref) => {

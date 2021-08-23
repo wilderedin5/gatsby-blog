@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Themed } from 'theme-ui'
+import React from 'react'
+import { Themed } from 'theme-ui'
 import { AnimateKeyframes } from 'react-simple-animate'
 import styled from '@emotion/styled'
 
@@ -9,8 +9,8 @@ const Container = styled.div`
   grid-column-gap: ${p => p.theme.space[5]};
   grid-row-gap: ${p => p.theme.space[0]};
   align-items: center;
-  border: ${p => `2px solid ${p.theme.colors.primary}`};
   padding: ${p => p.theme.space[3]};
+  border: ${p => `2px solid ${p.theme.colors.primary}`};
   box-shadow: ${p => p.theme.shadows.primary};
 `
 

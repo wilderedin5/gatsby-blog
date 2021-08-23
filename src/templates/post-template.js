@@ -1,9 +1,9 @@
-/** @jsx jsx */
+import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { getImage } from 'gatsby-plugin-image'
-import { jsx, Container } from 'theme-ui'
+import { Container } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { Layout } from '../components/layout'

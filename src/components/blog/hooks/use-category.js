@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { useMemo, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 

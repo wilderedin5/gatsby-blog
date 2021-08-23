@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import styled from '@emotion/styled'
 
 import { mediaQueries } from '../../gatsby-plugin-theme-ui'
@@ -21,8 +20,8 @@ const Container = styled.div`
 
 export const Posts = ({ posts, className }) => (
   <Container className={className}>
-    {posts.map((post, index) => (
-      <PostLink post={post} key={index} />
+    {posts.map((post, idx) => (
+      <PostLink post={post} key={idx} />
     ))}
   </Container>
 )

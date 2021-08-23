@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const useCategories = () => {

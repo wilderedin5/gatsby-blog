@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Container } from 'theme-ui'
+import React from 'react'
+import { Container } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { Link } from '../shared/link'
