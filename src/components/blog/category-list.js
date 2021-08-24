@@ -22,7 +22,7 @@ const Category = styled(Button)`
   color: ${p => (p.active ? p.theme.colors.black : p.theme.colors.white)};
 `
 
-export const CategoryList = ({ selected, onChange, className }) => {
+export const CategoryList = ({ selected, onCategoryChange, className }) => {
   const categories = useCategories()
 
   return (
@@ -30,7 +30,7 @@ export const CategoryList = ({ selected, onChange, className }) => {
       {categories.map((category, idx) => (
         <Category
           active={category === selected}
-          onClick={() => onChange(category)}
+          onClick={() => onCategoryChange(category)}
           key={idx}
         >
           {category}

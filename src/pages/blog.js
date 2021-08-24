@@ -30,8 +30,8 @@ const BlogPage = ({ data }) => {
         />
         <$Toolbar
           category={category}
-          onCategory={filterByCategory}
-          onSearch={filterByName}
+          onCategoryChange={filterByCategory}
+          onNameSearch={filterByName}
         />
         <Posts posts={posts} />
       </Container>

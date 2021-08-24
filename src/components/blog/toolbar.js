@@ -24,9 +24,9 @@ const $CategoryList = styled(CategoryList)`
   }
 `
 
-export const Toolbar = ({ category, onCategory, onSearch, className }) => (
+export const Toolbar = ({ category, onCategoryChange, onNameSearch, className }) => (
   <Container className={className}>
-    <$CategoryList selected={category} onChange={onCategory} />
-    <SearchForm onChange={onSearch} />
+    <$CategoryList selected={category} onCategoryChange={onCategoryChange} />
+    <SearchForm onNameSearch={onNameSearch} />
   </Container>
 )

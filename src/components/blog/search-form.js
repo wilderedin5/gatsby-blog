@@ -18,11 +18,11 @@ const $Input = styled(Input)`
   }
 `
 
-export const SearchForm = ({ onChange }) => {
+export const SearchForm = ({ onNameSearch }) => {
   const { register, handleSubmit } = useForm()
 
   const handleFormSubmit = ({ postName }) => {
-    onChange(postName)
+    onNameSearch(postName)
   }
 
   return (
