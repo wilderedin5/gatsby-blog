@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'theme-ui'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
@@ -8,6 +7,7 @@ import { Layout } from '../components/layout'
 import { useCategory } from '../components/blog/hooks/use-category'
 import { Toolbar } from '../components/blog/toolbar'
 import { Hero } from '../components/shared/hero'
+import { Container } from '../components/shared/container'
 
 const $Toolbar = styled(Toolbar)`
   margin-bottom: ${p => p.theme.space[3]};

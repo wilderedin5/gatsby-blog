@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container } from 'theme-ui'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import { Layout } from '../components/layout'
 import { Hero } from '../components/shared/hero'
 import { Features } from '../components/home/features'
+import { Container } from '../components/shared/container'
 
 const $Hero = styled(Hero)`
   margin-bottom: ${p => p.theme.space[10]};

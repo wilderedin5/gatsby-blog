@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { GlobalStyle } from '../../style/globalStyle'
 import { BrandIcon } from '../../assets/icons'
 import MetaData from '../page-metadata'
 import { Link } from '../shared/link'
+import { Container } from '../shared/container'
 
 const OuterContainer = styled.div`
   position: sticky;

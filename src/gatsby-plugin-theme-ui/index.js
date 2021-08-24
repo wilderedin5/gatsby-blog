@@ -116,13 +116,6 @@ const styles = {
   },
 }
 
-const layout = {
-  container: {
-    maxWidth: sizes.xl,
-    padding: `0 ${space[4]}`,
-  },
-}
-
 const fontFamily = {
   body: 'Montserrat, sans-serif',
 }
@@ -190,7 +183,6 @@ export const theme = {
   colors,
   sizes,
   styles,
-  layout,
   links,
   shadows,
 }

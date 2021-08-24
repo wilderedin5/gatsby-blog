@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { getImage } from 'gatsby-plugin-image'
-import { Container } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { Layout } from '../components/layout'
@@ -11,6 +10,7 @@ import { PostHeader } from '../components/blog/post-header'
 import { Hr } from '../components/shared/rule'
 import { Highlight } from '../components/shared/highlight'
 import { mediaQueries } from '../gatsby-plugin-theme-ui'
+import { Container } from '../components/shared/container'
 
 const $Hr = styled(Hr)`
   margin: ${p => `${p.theme.space[4]} 0`};

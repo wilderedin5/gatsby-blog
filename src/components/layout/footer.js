@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container } from 'theme-ui'
 import styled from '@emotion/styled'
 
 import { Link } from '../shared/link'
+import { Container } from '../shared/container'
 
 const OuterContainer = styled.div`
   background: ${p => p.theme.colors.secondary};
